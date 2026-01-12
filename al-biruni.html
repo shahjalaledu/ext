@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <title>জ্ঞান-বিজ্ঞানে আল-বিরুনীর অবদান</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #f4f5fb;
+      --bg-card: #ffffff;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+      --code-bg: #111827;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #e0f2fe 0, #f9fafb 40%, #f4f5fb 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 2.5rem 1.5rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 10% 20%, #dbeafe 0, transparent 40%),
+                  radial-gradient(circle at 90% 10%, #fee2e2 0, transparent 50%);
+      opacity: 0.8;
+      z-index: -1;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto 3rem;
+      padding: 0 1.5rem 2rem;
+    }
+
+    .title-block {
+      display: inline-block;
+      padding: 1.5rem 2.2rem;
+      border-radius: 1.5rem;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.18),
+        0 0 0 1px rgba(148, 163, 184, 0.2);
+      backdrop-filter: blur(12px);
+      text-align: left;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 3vw, 2.3rem);
+      margin: 0 0 0.4rem;
+      color: #111827;
+      letter-spacing: 0.03em;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      background: #f3f4ff;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .pill-accent {
+      background: var(--accent-soft);
+      color: #1d4ed8;
+      border-color: rgba(37, 99, 235, 0.4);
+    }
+
+    main {
+      margin-top: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 1.3fr);
+      gap: 1.75rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 1.2rem;
+      padding: 1.5rem 1.6rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+      margin-bottom: 1.25rem;
+    }
+
+    .card-highlight {
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.10);
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      margin: 0 0 0.7rem;
+      color: #111827;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 0.4rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      margin: 1.1rem 0 0.4rem;
+      color: #111827;
+    }
+
+    p {
+      margin: 0.3rem 0 0.7rem;
+      font-size: 0.96rem;
+    }
+
+    ul {
+      margin: 0.1rem 0 0.7rem 1.15rem;
+      padding: 0;
+      font-size: 0.95rem;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    .key-point {
+      background: #eff6ff;
+      border-radius: 0.75rem;
+      padding: 0.75rem 0.9rem;
+      border: 1px dashed rgba(37, 99, 235, 0.5);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .quote {
+      margin: 0.6rem 0 0.7rem;
+      padding: 0.6rem 0.8rem;
+      border-left: 3px solid var(--accent);
+      background: #f9fafb;
+      font-size: 0.9rem;
+      color: #374151;
+      border-radius: 0 0.75rem 0.75rem 0;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+
+    .badge {
+      padding: 0.15rem 0.6rem;
+      font-size: 0.8rem;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #3730a3;
+    }
+
+    .badge-soft {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .sidebar-card h3 {
+      margin-top: 0;
+    }
+
+    .timeline {
+      font-size: 0.92rem;
+    }
+
+    .timeline-item {
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-label {
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .pill-small {
+      display: inline-block;
+      padding: 0.08rem 0.5rem;
+      border-radius: 999px;
+      background: #f3f4f6;
+      font-size: 0.78rem;
+      color: #4b5563;
+      margin-left: 0.3rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.2rem 1rem 2.4rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .section-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #6366f1;
+      margin-bottom: 0.1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title-block">
+      <h1>জ্ঞান-বিজ্ঞানে আল-বিরুনীর অবদান</h1>
+      <div class="subtitle">
+        আবু রাইহান মুহাম্মদ ইবন আহমদ আল-বিরুনী (৯৭৩–১০৪৮ খ্রি.): এক জন ব্যক্তি, বহু শাস্ত্রের পথিকৃৎ।
+      </div>
+      <div class="meta">
+        <span class="pill-accent">গণিত · জ্যোতির্বিজ্ঞান · ভূগোল · নৃতত্ত্ব</span>
+        <span>প্রমাণভিত্তিক পদ্ধতি</span>
+        <span>তুলনামূলক ধর্ম ও সংস্কৃতি</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <main>
+      <div class="grid">
+        <!-- MAIN CONTENT -->
+        <section>
+          <article class="card card-highlight">
+            <div class="section-tag">সংক্ষিপ্ত সারসংক্ষেপ</div>
+            <h2>১. সামগ্রিক পরিচয় ও বৈশ্বিক গুরুত্ব</h2>
+            <p>
+              আবু রাইহান আল-বিরুনী ছিলেন এমন এক বিজ্ঞানমনস্ক পণ্ডিত, যিনি
+              একই সাথে গণিত, জ্যোতির্বিদ্যা, ভূগোল, পদার্থবিজ্ঞান, নৃতত্ত্ব,
+              ইতিহাস ও ধর্মতত্ত্বে উল্লেখযোগ্য অবদান রেখেছেন।
+            </p>
+            <ul>
+              <li>
+                জন্ম: ৯৭৩ খ্রি., খাওয়ারিজম অঞ্চল (বর্তমান উজবেকিস্তান), মৃত্যু: আনুমানিক ১০৪৮ খ্রি।
+              </li>
+              <li>
+                পরিচয়: গণিতবিদ, জ্যোতির্বিদ, ভূগোলবিদ, পদার্থবিজ্ঞানী, ইতিহাসবিদ ও সংস্কৃতি-গবেষক।
+              </li>
+              <li>
+                কেন্দ্রীয় বৈশিষ্ট্য:
+                <ul>
+                  <li><strong>প্রমাণভিত্তিক (empirical) মানসিকতা</strong> – পর্যবেক্ষণ, পরিমাপ ও গণনাকে জ্ঞানের প্রধান ভিত্তি করা।</li>
+                  <li><strong>ইন্টারডিসিপ্লিনারি দৃষ্টিভঙ্গি</strong> – গণিত, জ্যোতির্বিদ্যা, ভূগোল, ধর্মতত্ত্ব ইত্যাদি শাস্ত্রকে পরস্পর সংযুক্তভাবে ব্যবহার।</li>
+                </ul>
+              </li>
+            </ul>
+            <div class="key-point">
+              <strong>মূল কথা:</strong> আল-বিরুনী শুধু তথ্য সংগ্রাহক নন; তিনি
+              জ্ঞান অর্জনের একটি পদ্ধতিগত রূপরেখা (methodology) তৈরি করেন, যেখানে
+              পর্যবেক্ষণ + পরিমাপ + গণিত + তুলনামূলক বিশ্লেষণ একত্রে কাজ করে।
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="section-tag">গণিত</div>
+            <h2>২. গণিতে (Mathematics) অবদান</h2>
+            <h3>২.১ ত্রিকোণমিতিকে স্বতন্ত্র শাস্ত্র হিসেবে প্রতিষ্ঠা</h3>
+            <ul>
+              <li>
+                সাইন, কোসাইন, ট্যানজেন্ট ইত্যাদি ত্রিকোণমিতিক ফাংশনকে
+                সমন্বিত করে তিনি ত্রিকোণমিতিকে কেবল জ্যোতির্বিদ্যার উপকরণ নয়,
+                এক স্বতন্ত্র গণিত শাখা হিসেবে ব্যবহার করেন।
+              </li>
+              <li>
+                ত্রিকোণমিতিক সারণি (trigonometric tables) ও সূত্রের মাধ্যমে
+                অক্ষাংশ–দ্রাঘিমা নির্ণয়, উচ্চতা ও দূরত্ব নির্ণয়সহ নানা সমস্যা সমাধান করেন।
+              </li>
+            </ul>
+
+            <h3>২.২ জ্যামিতি ও বীজগণিতের সমন্বয়</h3>
+            <ul>
+              <li>
+                জ্যোতির্বৈজ্ঞানিক সমস্যায় তিনি একই সাথে <strong>জ্যামিতিক নির্মাণ</strong>
+                ও <strong>বীজগণিতীয় সমীকরণ</strong> ব্যবহার করেছেন।
+              </li>
+              <li>
+                এটি পরবর্তীকালের আধুনিক গণিতচর্চার – বিশেষ করে প্রয়োগ গণিতের –
+                একটি প্রাথমিক নমুনা হিসেবে ধরা হয়।
+              </li>
+            </ul>
+
+            <h3>২.৩ পরিমাপ ও সংখ্যাতত্ত্ব</h3>
+            <ul>
+              <li>
+                দৈর্ঘ্য, সময়, ভর ইত্যাদি পরিমাপে তিনি সূক্ষ্ম <strong>একক রূপান্তর (unit conversion)</strong> করেছেন।
+              </li>
+              <li>
+                ভারতীয় সংখ্যাপদ্ধতি ও অঙ্কশাস্ত্র পর্যালোচনা করে আরবি ভাষাভাষী জগতে আলোচনায় আনেন (যদিও উদ্ভাবক নন, বরং বিশ্লেষক ও প্রচারক)। 
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="section-tag">জ্যোতির্বিদ্যা</div>
+            <h2>৩. জ্যোতির্বিদ্যায় (Astronomy) অবদান</h2>
+            <h3>৩.১ নিখুঁত জ্যোতির্বৈজ্ঞানিক পরিমাপ</h3>
+            <ul>
+              <li>
+                পৃথিবীর ব্যাসার্ধ ও পরিধি নির্ণয়ের জন্য তিনি বাস্তব ভূখণ্ডে
+                পর্যবেক্ষণ ও ত্রিকোণমিতি ব্যবহার করেন; তাঁর প্রাপ্ত মান আধুনিক
+                মানের কাছাকাছি ছিল।
+              </li>
+              <li>
+                বিভিন্ন স্থানের অক্ষাংশ ও দ্রাঘিমা নির্ণয়ে তিনি সূর্যের উচ্চতা,
+                দিন–রাত্রির দৈর্ঘ্য ইত্যাদি ব্যবহার করে একপ্রকার প্রাচীন
+                জ্যোতির্বৈজ্ঞানিক–ভূগোলিক ডেটাবেস তৈরি করেন।
+              </li>
+            </ul>
+
+            <h3>৩.২ গ্রহ-নক্ষত্র পর্যবেক্ষণ</h3>
+            <ul>
+              <li>সূর্যগ্রহণ, চন্দ্রগ্রহণ, গ্রহের গতি তিনি নিজে পর্যবেক্ষণ করে সময় ও অবস্থান লিপিবদ্ধ করেন।</li>
+              <li>পটোলেমীয় জ্যোতির্বিদ্যার সীমাবদ্ধতা ও কিছু ত্রুটি সম্পর্কে যুক্তিগত সমালোচনা করেছেন।</li>
+            </ul>
+
+            <h3>৩.৩ যন্ত্রের ব্যবহার ও নির্মাণ</h3>
+            <ul>
+              <li>অ্যাস্ট্রোল্যাবসহ বিভিন্ন যন্ত্রের নির্মাণ ও ব্যবহারবিষয়ক বিস্তারিত বিবরণ দেন।</li>
+              <li>
+                তাঁর কাছে <strong>মাপের নির্ভুলতা</strong> অত্যন্ত গুরুত্বপূর্ণ ছিল; অনেক জায়গায় তিনি নিজ পর্যবেক্ষণের
+                সম্ভাব্য ভুলের পরিমাণ (error) নিয়েও মন্তব্য করেছেন।
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="section-tag">ভূগোল ও ভূ-পরিমিতি</div>
+            <h2>৪. ভূগোল ও ভূ-পরিমিতি (Geography & Geodesy)</h2>
+            <h3>৪.১ পৃথিবীর আকার ও আয়তন</h3>
+            <ul>
+              <li>পৃথিবীকে তিনি নিশ্চিতভাবেই <strong>গোলাকার</strong> বলে ধরে নেন ও জ্যামিতি ব্যবহার করে এর আয়তন ও পরিধি নির্ণয় করেন।</li>
+              <li>পাহাড়ের চূড়া থেকে দিগন্তের কৌণিক উচ্চতা মেপে ত্রিকোণমিতিক পদ্ধতিতে পৃথিবীর ব্যাসার্ধ বের করার চেষ্টার জন্য তিনি বিখ্যাত।</li>
+            </ul>
+
+            <h3>৪.২ অক্ষাংশ–দ্রাঘিমা নির্ণয়</h3>
+            <ul>
+              <li>বিভিন্ন শহরের অক্ষাংশ ও দ্রাঘিমা নির্ণয়ে জ্যোতির্বৈজ্ঞানিক পর্যবেক্ষণ ব্যবহার করেছেন।</li>
+              <li>এতে তিনি এক ধরনের প্রোটোটাইপ বিশ্ব–মানচিত্রের জন্য ডেটা সরবরাহ করেন।</li>
+            </ul>
+
+            <h3>৪.৩ পৃথিবীর গতির ধারণা</h3>
+            <ul>
+              <li>
+                পৃথিবী স্থির—এই ধারণা যে অপরিবর্তনীয় নয়, তা নিয়ে তিনি যুক্তি উত্থাপন করেন এবং
+                পৃথিবীর ঘূর্ণনের সম্ভাবনা নিয়ে আলোচনা করেন।
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="section-tag">প্রাকৃতিক বিজ্ঞান</div>
+            <h2>৫. পদার্থবিজ্ঞান ও প্রাকৃতিক বিজ্ঞানে অবদান</h2>
+            <h3>৫.১ ঘনত্ব (Density) ও হাইড্রোস্ট্যাটিক নীতি</h3>
+            <ul>
+              <li>বিভিন্ন তরল ও কঠিন বস্তুর ঘনত্ব নির্ণয়ে তিনি আর্খিমিডিসের নীতির সদৃশ পদ্ধতি ব্যবহার করেন।</li>
+              <li>একে অনেক গবেষক আধুনিক ঘনত্ব–পরিমাপ বিজ্ঞানের প্রাথমিক ধাপ হিসেবে বিবেচনা করেন।</li>
+            </ul>
+
+            <h3>৫.২ আলো ও অপটিক্স সম্পর্কিত ধারণা</h3>
+            <ul>
+              <li>আলো ভঙ্গ, প্রতিফলন ইত্যাদি বিষয়ে পূর্বসূরি জ্ঞানকে ব্যবহার করে আলোচনা করেছেন।</li>
+              <li>যদিও ইবন আল-হাইথামের মত অগ্রগামী নন, তবুও আলো ও দৃষ্টির প্রকৃতি নিয়ে গুরুত্বপূর্ণ মন্তব্য করেন।</li>
+            </ul>
+
+            <h3>৫.৩ খনিজ ও প্রাকৃতিক সম্পদ</h3>
+            <ul>
+              <li>বিভিন্ন খনিজ পদার্থ, ধাতু ও তাদের বৈশিষ্ট্য বর্ণনা করে এক ধরনের প্রাথমিক মিনারোলজি চর্চা করেন।</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="section-tag">নৃতত্ত্ব ও ধর্ম</div>
+            <h2>৬. নৃতত্ত্ব, সংস্কৃতি ও তুলনামূলক ধর্ম</h2>
+            <div class="quote">
+              তাঁর <strong>“কিতাব আল-হিন্দ”</strong> (Kitab fi Tahqiq ma li’l-Hind) গ্রন্থটিকে
+              অনেকেই প্রাচীনকালের সবচেয়ে বৈজ্ঞানিক ভারত–গবেষণা হিসেবে মানেন।
+            </div>
+
+            <h3>৬.১ কিতাব আল-হিন্দ ও ভারত–গবেষণা</h3>
+            <ul>
+              <li>ভারতীয় সমাজ, ধর্ম, দর্শন, গণিত, জ্যোতির্বিজ্ঞান, ভাষা, আচার–অনুষ্ঠান সব কিছুকে সমন্বিতভাবে লিখেছেন।</li>
+              <li>তিনি নিজে সংস্কৃত শিখে সরাসরি মূল গ্রন্থ ও ব্রাহ্মণ পণ্ডিতদের কাছ থেকে তথ্য নিয়েছেন।</li>
+            </ul>
+
+            <h3>৬.২ তুলনামূলক ধর্মতত্ত্ব</h3>
+            <ul>
+              <li>হিন্দুধর্ম, ইসলাম, খ্রিস্টধর্ম, বৌদ্ধধর্ম ইত্যাদির বিশ্বাস ও আচার তুলনামূলকভাবে আলোচনা করেন।</li>
+              <li>
+                ব্যক্তিগত ধর্মীয় পরিচয় থাকা সত্ত্বেও বিশ্লেষণে তিনি <strong>সমালোচনামূলক কিন্তু সম্মানসূচক</strong>
+                দৃষ্টিভঙ্গি বজায় রাখেন।
+              </li>
+            </ul>
+
+            <h3>৬.৩ সংস্কৃত–আরবি জ্ঞানবিনিময়</h3>
+            <ul>
+              <li>হিন্দু গণিত, জ্যোতির্বিদ্যা ও দর্শনের বহু ধারণা তাঁর মাধ্যমে আরবি ও ইসলামি বিশ্বে পরিচিত হয়।</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="section-tag">ইতিহাস ও কালপঞ্জি</div>
+            <h2>৭. ইতিহাস, কালপঞ্জি ও ক্যালেন্ডার বিজ্ঞান</h2>
+            <h3>৭.১ “আল-আথার আল-বাকিয়া”</h3>
+            <ul>
+              <li>
+                <strong>“আল-আথার আল-বাকিয়া ‘ান আল-কুরুন আল-খালিয়া”</strong> গ্রন্থে
+                তিনি বিভিন্ন জাতি ও সভ্যতার ক্যালেন্ডার, উৎসব, তারিখ নির্ণয় ও ঐতিহাসিক ঘটনার সময় নির্ধারণ বিশ্লেষণ করেন।
+              </li>
+            </ul>
+
+            <h3>৭.২ বহু ক্যালেন্ডারের সমন্বয়</h3>
+            <ul>
+              <li>ইহুদি, খ্রিস্টীয়, হিন্দু, ইসলামী, প্রাচীন ইরানি, গ্রিক, রোমান ইত্যাদি ক্যালেন্ডারকে একে অপরের সাথে তুলনা করেন।</li>
+              <li>এর মাধ্যমে ইতিহাসকে কেবল গল্প নয়, বরং তারিখসহ ঘটনাক্রম হিসেবে দেখার একটি বৈজ্ঞানিক ধারা গড়ে তোলেন।</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="section-tag">বৈজ্ঞানিক পদ্ধতি</div>
+            <h2>৮. বৈজ্ঞানিক পদ্ধতিতে (Scientific Method) অবদান</h2>
+            <h3>৮.১ প্রমাণভিত্তিকতা ও পরীক্ষা</h3>
+            <ul>
+              <li>মতামতের আগে পর্যবেক্ষণ, বর্ণনার আগে পরিমাপ—একে তিনি নীতি হিসেবে গ্রহণ করেন।</li>
+              <li>নিজের পদ্ধতির সীমাবদ্ধতা ও সম্ভাব্য ভুলের উৎস তিনি প্রায়ই উল্লেখ করেন, যা আধুনিক গবেষণাপদ্ধতির মূল বৈশিষ্ট্য।</li>
+            </ul>
+
+            <h3>৮.২ সমালোচনামূলক চিন্তা</h3>
+            <ul>
+              <li>গ্রিক, ভারতীয় ও আরবি পূর্বসূরি লেখকদের অন্ধ অনুসারী না হয়ে যুক্তির আলোকে তাঁদের মতামত যাচাই করেছেন।</li>
+            </ul>
+
+            <h3>৮.৩ ইন্টারডিসিপ্লিনারি গবেষণা</h3>
+            <ul>
+              <li>জ্যোতির্বিদ্যা করতে গিয়ে তিনি গণিত, পদার্থবিজ্ঞান, ভূগোল, ধর্মতত্ত্ব – সব একসাথে ব্যবহার করেন।</li>
+              <li>আজকের বহুমাত্রিক গবেষণা–ধারার (systems thinking, STS ইত্যাদি) এক প্রাথমিক রূপ তাঁর কাজে প্রতিফলিত।</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="section-tag">সমগ্র মূল্যায়ন</div>
+            <h2>৯. সারসংক্ষেপ: কেন আল-বিরুনী এত গুরুত্বপূর্ণ?</h2>
+            <ul>
+              <li><strong>বৈজ্ঞানিক ভূগোল ও জিওডেসি</strong> – পৃথিবীর পরিমাপ, অক্ষাংশ–দ্রাঘিমা, ভূ-পরিমিতিতে তিনি অগ্রদূত।</li>
+              <li><strong>ত্রিকোণমিতিকে শাস্ত্ররূপ প্রদান</strong> – জ্যোতির্বিজ্ঞান ও ভূগোলে ত্রিকোণমিতির পূর্ণাঙ্গ প্রয়োগ।</li>
+              <li><strong>প্রাক-আধুনিক নৃতত্ত্বের জনকসদৃশ ভূমিকা</strong> – কিতাব আল-হিন্দ-এর নিরপেক্ষ, অন্তর্গত দৃষ্টিভঙ্গি।</li>
+              <li><strong>তুলনামূলক ধর্ম ও কালপঞ্জি-বিজ্ঞান</strong> – বিভিন্ন ধর্ম ও ক্যালেন্ডারকে বৈজ্ঞানিকভাবে তুলনা ও সমন্বয়।</li>
+              <li><strong>পদ্ধতিগত বৈজ্ঞানিক মনোভাব</strong> – পর্যবেক্ষণ, পরিমাপ, গণিত, সমালোচনামূলক বিশ্লেষণ—এই সমন্বয়কে কেন্দ্রে রাখা।</li>
+            </ul>
+            <div class="key-point">
+              <strong>সংক্ষিপ্ত মন্তব্য:</strong> আল-বিরুনীকে এক কথায় বলা যায় –
+              <em>“বহু শাস্ত্রের মাঝে সেতুবন্ধন গড়া এক প্রমাণভিত্তিক চিন্তার স্থপতি”</em>।
+            </div>
+          </article>
+        </section>
+
+        <!-- SIDEBAR -->
+        <aside>
+          <div class="card sidebar-card">
+            <h3>প্রোফাইল ঝলক</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <span class="timeline-label">জন্ম:</span> ৯৭৩ খ্রি., খাওয়ারিজম
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-label">মৃত্যু:</span> আনু. ১০৪৮ খ্রি.
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-label">সমসাময়িক ধারার নাম:</span>
+                <span class="pill-small">ইসলামি স্বর্ণযুগের বিজ্ঞানী</span>
+              </div>
+            </div>
+
+            <h3 style="margin-top: 1rem;">মূল পরিচয়</h3>
+            <div class="badge-list">
+              <span class="badge">গণিতবিদ</span>
+              <span class="badge">জ্যোতির্বিজ্ঞানী</span>
+              <span class="badge">ভূগোলবিদ</span>
+              <span class="badge">ইতিহাসবিদ</span>
+              <span class="badge badge-soft">নৃতত্ত্ববিদ</span>
+            </div>
+          </div>
+
+          <div class="card sidebar-card">
+            <h3>প্রধান গ্রন্থসমূহ</h3>
+            <ul>
+              <li><strong>কিতাব আল-হিন্দ</strong> – ভারতবর্ষের ধর্ম, দর্শন, সমাজ ও বিজ্ঞান নিয়ে বিস্তৃত আলোচনা।</li>
+              <li><strong>আল-আথার আল-বাকিয়া</strong> – বিভিন্ন সভ্যতার ক্যালেন্ডার ও ইতিহাস-কালপঞ্জি।</li>
+              <li>বিভিন্ন জ্যোতির্বৈজ্ঞানিক রচনা – পর্যবেক্ষণ, টেবিল ও পৃথিবীর পরিমাপ।</li>
+            </ul>
+          </div>
+
+          <div class="card sidebar-card">
+            <h3>পরীক্ষা/নোটের জন্য কী মনে রাখব?</h3>
+            <ul>
+              <li>ত্রিকোণমিতিকে স্বতন্ত্র শাস্ত্ররূপে প্রয়োগ।</li>
+              <li>পৃথিবীর ব্যাসার্ধ নির্ণয়ে পাহাড়-পর্যবেক্ষণ পদ্ধতি।</li>
+              <li>কিতাব আল-হিন্দ – সংস্কৃত শিখে ভারত-গবেষণা।</li>
+              <li>আল-আথার আল-বাকিয়া – বহুক্যালেন্ডার সমন্বয়।</li>
+              <li>সমালোচনামূলক, প্রমাণভিত্তিক বৈজ্ঞানিক মানসিকতা।</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    এই পৃষ্ঠাটি আল-বিরুনীর জ্ঞান-বিজ্ঞানে অবদানকে সংক্ষেপে, কিন্তু পয়েন্ট আকারে
+    সুন্দরভাবে উপস্থাপন করার জন্য তৈরি করা হয়েছে। আপনি চাইলে নিজের নোট বা
+    উদাহরণ যোগ করে এটি আরও সমৃদ্ধ করতে পারেন।
+  </footer>
+</body>
+</html>
