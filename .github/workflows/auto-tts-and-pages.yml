@@ -1,0 +1,95 @@
+name: Auto TTS on all HTML + Build index + Deploy Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write    # needed to commit back changes
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-tts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Ensure tts-player.js exists
+        run: |
+          if [ ! -f "tts-player.js" ]; then
+            echo "ERROR: tts-player.js is missing. Add it to the repo root." >&2
+            exit 1
+          fi
+
+      - name: Auto-inject TTS script into all HTML files
+        run: |
+          changed=false
+          # find all .html files except under .git, .github, node_modules
+          for file in $(find . -name "*.html" ! -path "./.git/*" ! -path "./.github/*" ! -path "./node_modules/*"); do
+            # Skip if it already has tts-player.js
+            if grep -q "tts-player.js" "$file"; then
+              continue
+            fi
+
+            echo "Injecting TTS script into $file"
+
+            # If there is a closing </body>, insert before it (case-insensitive)
+            if grep -qi "</body>" "$file"; then
+              # sed inline replace: insert script before </body>
+              sed -i 's#</body>#  <script src="tts-player.js"></script>\n</body>#I' "$file"
+            else
+              # No </body> tag, append at end
+              echo '<script src="tts-player.js"></script>' >> "$file"
+            fi
+
+            changed=true
+          done
+
+          if [ "$changed" = true ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add .
+            git commit -m "Auto-inject TTS script into HTML files [skip ci]" || echo "Nothing to commit"
+            git push
+          else
+            echo "No HTML files needed TTS injection."
+          fi
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate index.html from template.html
+        run: |
+          if [ -f "generate_index.js" ] && [ -f "template.html" ]; then
+            node generate_index.js
+          else
+            echo "template.html or generate_index.js missing; skipping index generation."
+          fi
+
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./
+
+  deploy:
+    needs: build-and-tts
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
